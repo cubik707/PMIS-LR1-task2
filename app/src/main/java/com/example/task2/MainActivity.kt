@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -80,9 +81,13 @@ fun Greeting(modifier: Modifier = Modifier) {
                     textValue = ""
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2C9393)),
-                modifier = Modifier.size(40.dp)
+                shape = RoundedCornerShape(50),
+                contentPadding = PaddingValues(0.dp), // внутренний отступ
+                modifier = Modifier
+                    .padding(8.dp) // внешний отступ
+                    .size(40.dp)
             ) {
-                Text(text = "X")
+                Text(text = "X", fontSize = 16.sp)
             }
         }
     }
